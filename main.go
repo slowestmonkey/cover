@@ -31,7 +31,7 @@ func main() {
 
 	albumRepository := repositories.NewSpotifyApi(&spotifyApiConfig)
 	albumService := albumsrv.New(albumRepository)
-	albumRouter := handlers.NewAlbumHttpHandler(albumService)
+	albumRouter := handlers.NewAlbumHttpRouter(albumService)
 
 	r.Mount("/albums", albumRouter)
 
